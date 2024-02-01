@@ -3,7 +3,7 @@
 " export.vim - 
 "
 " Created by skywind on 2024/02/01
-" Last Modified: 2024/02/01 22:48
+" Last Modified: 2024/02/02 04:22
 "
 "======================================================================
 
@@ -21,7 +21,9 @@ function! colorexp#export#list_highlight()
 		if hlexists(name)
 			let hid = hlID(name)
 			let t = colorexp#colors#dump_highlight(hid, convert)
-			let output += [t]
+			if stridx(t, '@') < 0
+				let output += [t]
+			endif
 		endif
 	endfor
 	return output
