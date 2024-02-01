@@ -43,6 +43,11 @@ function! s:ColorExport(bang, name)
 			return 0
 		endif
 	endif
+	let dirhome = fnamemodify(name, ':p:h')
+	if !isdirectory(dirhome)
+		call s:errmsg(printf('Directory does not exist: %s', dirhome))
+		return 0
+	endif
 	let ts = reltime()
 	call colorexp#export#proceed(name)
 	let tt = reltime(ts)

@@ -15,7 +15,7 @@ function! colorexp#export#list_highlight()
 	let colorexp#palette#number = get(g:, 'color_palette_number', 256)
 	let output = []
 	let names = colorexp#names#collect()
-	let convert = get(g:, 'color_export_term_convert', 1)
+	let convert = get(g:, 'color_export_convert', 1)
 	call colorexp#colors#update_normal()
 	for name in names
 		if hlexists(name)
