@@ -3,7 +3,7 @@
 " names.vim - 
 "
 " Created by skywind on 2024/01/31
-" Last Modified: 2024/01/31 16:11:21
+" Last Modified: 2024/02/01 22:48
 "
 "======================================================================
 
@@ -78,6 +78,7 @@ endfunc
 " collect required names
 "----------------------------------------------------------------------
 function! colorexp#names#collect() abort
+	let candidate = []
 	let output = []
 	if get(g:, 'color_export_all', 0)
 		let hid = 1
@@ -86,7 +87,7 @@ function! colorexp#names#collect() abort
 			if !hlexists(name)
 				break
 			endif
-			let output += [name]
+			let candidate += [name]
 			let hid += 1
 		endwhile
 	else
@@ -98,8 +99,13 @@ function! colorexp#names#collect() abort
 				let extra = split(g:color_export_extra, ',')
 			endif
 		endif
-		let output = colorexp#names#extend_link(s:native_names + extra)
+		let candidate = colorexp#names#extend_link(s:native_names + extra)
 	endif
+	for name in candidate
+		if stridx(name, '@') < 0
+			let output += [name]
+		endif
+	endfor
 	return output
 endfunc
 
