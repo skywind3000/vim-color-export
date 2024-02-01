@@ -24,7 +24,7 @@ lazy:
         vim.g.color_export_extra = {'GitGutterAdd', 'GitGutterChange', 'GitGutterDelete', 'GitGutterChangeDelete'}
         vim.g.color_export_convert = 1
     },
-}
+},
 ```
 
 ## Usage
