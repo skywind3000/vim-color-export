@@ -37,7 +37,7 @@ function! colorexp#export#proceed(name)
 	let cname = get(g:, 'colors_name', 'default')
 	let tname = fnamemodify(a:name, ':t:r')
 	let output = []
-	let output += ['set background=dark']
+	let output += [printf('set background=%s', &background)]
 	let output += ['hi clear']
 	let output += ['']
 	let output += [printf('let g:colors_name = "%s"', tname)]
