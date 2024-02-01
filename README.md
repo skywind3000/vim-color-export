@@ -60,5 +60,9 @@ let g:color_export_extra = ['GitGutterAdd', 'GitGutterChange', 'GitGutterDelete'
 Convert gui colors to cterm colors, make current colorscheme usable in any 256-colors terminal without `:set termguicolors`.
 
 
+## Credit
 
+Related project:
+
+- [vim-color-patch](https://github.com/skywind3000/vim-color-patch): Load colorscheme patch script automatically after ":color xxx" command !! 
 
