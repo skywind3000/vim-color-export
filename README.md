@@ -32,7 +32,7 @@ lazy:
 Export current colorscheme to "tokyonight.vim" :
 
 ```VimL
-:ColorExport ~/.vim/colors/tokyonight.vim'
+:ColorExport ~/.vim/colors/tokyonight.vim
 ```
 
 and you can use 'tokyonight' in Vim, like this:
