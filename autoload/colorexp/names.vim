@@ -87,7 +87,9 @@ function! colorexp#names#collect() abort
 			if !hlexists(name)
 				break
 			endif
-			let candidate += [name]
+			if stridx(name, '@') < 0
+				let candidate += [name]
+			endif
 			let hid += 1
 		endwhile
 	else
