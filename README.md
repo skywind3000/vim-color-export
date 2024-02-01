@@ -22,7 +22,11 @@ Export current colorscheme to "tokyonight.vim" :
 :ColorExport ~/.vim/colors/tokyonight.vim'
 ```
 
-and you can use 'tokyonight' in Vim.
+and you can use 'tokyonight' in Vim, like this:
+
+![](https://skywind3000.github.io/images/p/colors/tokyonight.png)
+
+
 
 ## Options
 
