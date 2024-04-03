@@ -16,7 +16,7 @@ function! colorexp#export#list_highlight()
 	let output = []
 	let names = colorexp#names#collect()
 	let convert = get(g:, 'color_export_convert', 1)
-	call colorexp#colors#update_normal()
+	call colorexp#colors#init()
 	for name in names
 		if hlexists(name)
 			let hid = hlID(name)
